@@ -25,7 +25,7 @@ if [ "${CONDA_DEFAULT_ENV:-notpolo}" = "notpolo" ]; then
 fi
 [ $((errors)) -gt 0 ] && exit 1
 PYINSTALLER_INSTALLED=$(conda list -c pyinstaller | awk '/pypi\/pypi::pyinstaller-[[:digit:]]/ { print $0 }')
-if [ "${PYINSTALLER_INSTALLED}" ]; then
+if [ "${PYINSTALLER_INSTALLED:-notinstalled}" = "notinstalled" ]; then
     echo "Install pyinstaller with: pip install pyinstaller"
     exit 1
 fi
