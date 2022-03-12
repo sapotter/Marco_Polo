@@ -1,0 +1,19 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# ignore files that are created by polo during testing
+.polo_backups/
+recents.txt
+Polo.log
+
+# ignore sphnix build files
+sphnix/_build/
+
+# ignore vscode file
+.vscode/
