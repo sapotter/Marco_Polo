@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 import inspect
 import platform
+import tempfile
 
 
 from PyQt5.QtGui import QBrush, QColor, QIcon, QPixmap
@@ -12,18 +13,26 @@ from PyQt5 import QtWidgets
 from tensorflow.contrib.predictor import from_saved_model
 
 polo_version = '0.1.0'  # should be int.int.int format
+
+# In macOS, this is Polo.app/Contents/MacOS
 dirname = Path(os.path.dirname(__file__)).parent
 
+# macOS double-click launch starts with the working directory in "/", the
+# root of the file system. To avoid permission issues, change the working
+# directory to the user's home.
+HOME_DIR = Path.home()
+os.chdir(HOME_DIR)
 
 # CONSTANT FILE PATHS
 # =============================================================================
-
 LOG_PATH = Path('polo.log')  # always in same dir as Polo main file
-RECENT_FILES = Path('recents.txt')
+RECENT_FILES = Path('polo_recents.txt')
 DATA_DIR = dirname.joinpath('data')
 APP_ICON = DATA_DIR.joinpath('images/logos/polo.png')
 UNRAR = dirname.joinpath('unrar')
-TEMP_DIR = dirname.joinpath('.tmp')
+# The temp directory should not be in the application bundle/folder.
+# TEMP_DIR = dirname.joinpath('.tmp')
+TEMP_DIR = Path(tempfile.gettempdir()).joinpath('polo')
 
 BACKUP_DIR = Path(os.getcwd()).joinpath('.polo_backups')
 
