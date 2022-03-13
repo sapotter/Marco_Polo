@@ -36,11 +36,11 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True,
+          console=False,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None , icon='../macOS/appplication.icns')
+          entitlements_file=None , icon='../macOS/application.icns')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -49,3 +49,7 @@ coll = COLLECT(exe,
                upx=True,
                upx_exclude=[],
                name='Polo')
+app = BUNDLE(coll,
+             name='Polo.app',
+             icon='../macOS/application.icns',
+             bundle_identifier='org.hauptman-woodward.polo')
