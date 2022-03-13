@@ -4,6 +4,7 @@
 # ignore files that are created by polo during testing
 .polo_backups/
 recents.txt
+polo_recents.txt
 Polo.log
 
 # ignore sphnix build files
