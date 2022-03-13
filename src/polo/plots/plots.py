@@ -4,22 +4,20 @@ import random
 from PyQt5 import QtWidgets
 
 import matplotlib
-from polo.crystallography.image import Image
+matplotlib.use('QT5Agg')
 import numpy as np
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as Canvas
 from matplotlib.backends.backend_qt5agg import \
     NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
 from polo.plots.plot_utils import *
-from polo.utils.dialog_utils import make_message_box
-from polo import make_default_logger, IMAGE_CLASSIFICATIONS
 
-matplotlib.use('QT5Agg')
 
-logger = make_default_logger(__name__)
 
 
 # Ensure using PyQt5 backend
+
+
 # Matplotlib canvas class to create figure
 
 
@@ -73,27 +71,6 @@ class StaticCanvas(MplCanvas):
                     else:
                         correctness[1] += 1
         return correctness
-    
-
-    def cocktail_distance_heatmap(self, current_run):
-        hits = []
-        for image in current_run.images:
-            if isinstance(image, Image) and image.human_class == IMAGE_CLASSIFICATIONS[0]:
-                hits.append(image.cocktail)
-        matrix = []
-        for i in range(len(hits)):
-            matrix.append([])
-            for j in range(len(hits)):
-                d = hits[i].compute_distance(hits[j])
-                if d:
-                    matrix[i].append(d)
-                else:
-                    matrix[i].append(0)
-            
-        self.clear_axis()
-        ax = self.fig.add_subplot(111)
-        self.fig.get_axes()[0].imshow(matrix, cmap='hot')
-        self.draw()     
 
     def classification_progress(self, current_run):
         # need to know total classified and
@@ -103,54 +80,38 @@ class StaticCanvas(MplCanvas):
         # two lists tuple for each bar
         for image in current_run.images:
             if image.machine_class in class_dict:  # could be None
-                class_dict[str(image.machine_class)][1] += 1
+                class_dict[image.machine_class][1] += 1
             if image.human_class in class_dict:
-                class_dict[str(image.machine_class)][0] += 1
+                class_dict[image.machine_class][0] += 1
 
         bar_values = [class_dict[x][0] for x in class_dict.keys(
         )], [class_dict[x][1] for x in class_dict.keys()], list(class_dict.keys())
         return bar_values
 
     def plot_classification_progress(self, current_run):
-        try:
-            self.clear_axis()
+        self.clear_axis()
 
-            ax = self.fig.add_subplot(111)
-            classified_values, unclass_values, labels = self.classification_progress(
-                current_run)
-            ax.bar(labels, unclass_values, color='grey')
-            ax.bar(labels, classified_values, color='lightblue')
-            ax.set_title('Classification Progress By MARCO Designation')
-            self.draw()
-        except Exception as e:
-            logger.error('Caught {} calling plot_classification_progress'.format(e))
-            m = make_message_box(
-                parent=self,
-                message='Could not complete plot drawing. Failed with error {}'.format(e)
-            )
-            m.exec_()
+        ax = self.fig.add_subplot(111)
+        classified_values, unclass_values, labels = self.classification_progress(
+            current_run)
+        ax.bar(labels, unclass_values, color='grey')
+        ax.bar(labels, classified_values, color='lightblue')
+        ax.set_title('Classification Progress By MARCO Designation')
+        self.draw()
 
     def plot_meta_stats(self, current_run):
-        try:
-            self.clear_axis()
-            # add all subplots here
-            self.fig.add_subplot(111)
-            # make classification progress plot
-            # make accuracy plot
-            labels = ['Correct', 'Incorrect']
-            marco_accuracy = self.marco_accuracy(current_run)
-            self.fig.get_axes()[0].bar(
-                labels, marco_accuracy, color='lightblue')
-            self.fig.get_axes()[0].set_title(
-                'MARCO Classification Accuracy')
-            self.draw()
-        except Exception as e:
-            logger.error('Caught {} while calling plot_meta_stats'.format(e))
-            m = make_message_box(
-                parent=self,
-                message='Could not complete plot drawing. Failed with error {}'.format(e)
-            )
-            m.exec_()
+        self.clear_axis()
+        # add all subplots here
+        self.fig.add_subplot(111)
+        # make classification progress plot
+        # make accuracy plot
+        labels = ['Correct', 'Incorrect']
+        marco_accuracy = self.marco_accuracy(current_run)
+        self.fig.get_axes()[0].bar(
+            labels, marco_accuracy, color='lightblue')
+        self.fig.get_axes()[0].set_title(
+            'MARCO Classification Accuracy')
+        self.draw()
 
     def plot_plate_heatmaps(self, current_run):
 
@@ -192,15 +153,8 @@ class StaticCanvas(MplCanvas):
             # check if want to redraw it
 
             self.draw()
-        except Exception as e:  #
-            logger.error('Caught {} while calling {}'.format(
-                e, self.plot_plate_heatmaps
-            ))
-            m = make_message_box(
-                parent=self,
-                message='Could not complete plot drawing. Failed with error {}'.format(e)
-            )
-            m.exec_()
+        except Exception:  # lazy error handling for now see code above try block
+            return 
 
     def plot_existing_plot(self, saved_figure):
         self.clear_axis()
