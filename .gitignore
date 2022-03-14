@@ -13,6 +13,9 @@ sphnix/_build/
 # ignore vscode file
 .vscode/
 
+# No DMGs
+*.dmg
+
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
