@@ -2,7 +2,7 @@
 
 A DMG Installer is a convenient way to provide end-users a simple way to install
 an application bundle. They are basically a folder with a shortcut to the Applications
-directory but they can be customized with icons, backgrounds, and layout properties.
+directory, but they can be customized with icons, backgrounds, and layout properties.
 A DMG file (.dmg) is a macOS Disk Image file, and it is used to package files or folders
 providing compression, encryption, and read-only to the package.
 
