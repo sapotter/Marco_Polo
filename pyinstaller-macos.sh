@@ -17,7 +17,7 @@ $(echo -e ${BOLD}SYNOPSIS${NC})
     $(basename "$0") [-m] [-b | -d | -o | -w] [-s [spec-path]] [-h]
 
 $(echo -e ${BOLD}OPTIONS${NC})
-    -m Run py-makespec. Default: pyinstaller.
+    -m Run pyi-makespec. Default: pyinstaller.
     -b Specify the macOS CFBundleIdentifier if an application bundle
        is created. Default: org.hauptman-woodward.polo.
     -d Create a directory containing tha application and its supporting
@@ -105,7 +105,7 @@ if [ "${PYINSTALLER_INSTALLED:-notinstalled}" = "notinstalled" ]; then
 fi
 
 $CMD --collect-all tensorflow \
---hidden-import pptx \
+--collect-all pptx \
 --add-data ../src/data:data --add-data ../src/astor:astor \
 --add-data ../src/unrar:unrar --add-data ../src/templates:templates \
 --icon ../macOS/application.icns \
