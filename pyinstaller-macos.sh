@@ -22,7 +22,7 @@ $(echo -e ${BOLD}OPTIONS${NC})
        is created. Default: org.hauptman-woodward.polo.
     -d Create a directory containing tha application and its supporting
        components. Default.
-    -o Create a single file application.
+    -f Create a single file application.
     -w Create a macOS application bundle.
     -s Specify the "spec" file directory path. Default: ./macOS.
     -h Help.
@@ -37,27 +37,29 @@ EOT
 : ${SPEC_PATH:=macOS}
 # shellcheck disable=SC2223
 : ${BUNDLE_ID:=org.hauptman-woodward.polo}
+# shellcheck disable=SC2223
+: ${ICONFILE:=../macOS/application.icns}
 
-
-while getopts "bdmows:h" option; do
+icon="--icon $ICONFILE"
+while getopts "mbdfws:h" option; do
     case $option in
+        m)
+            RUNNER="pyi-makespec"
+            ;;
         b)
             bundle="--osx-bundle-identifier ${BUNDLE_ID}"
             ;;
         d)
             onedir="--onedir"
             ;;
-        m)
-            RUNNER="pyi-makespec"
-            ;;
-        s)
-            SPEC_PATH=$OPTARG
-            ;;
-        o)
+        f)
             onefile="--onefile"
             ;;
         w)
             windowed="--windowed"
+            ;;
+        s)
+            SPEC_PATH=$OPTARG
             ;;
         h|*)
             usage
@@ -68,7 +70,7 @@ shift "$((OPTIND - 1))"
 
 if [ "$makespec" ]; then RUNNER="pyi-makespec"; fi
 
-CMD="$RUNNER $bundle $onedir $onefile $windowed --specpath ${SPEC_PATH}"
+CMD="$RUNNER $bundle $icon $onefile $windowed --specpath ${SPEC_PATH}"
 # Trim extra spaces
 CMD=$(echo "$CMD" | \
     awk '{ gsub(/[[:space:]]{2,}/, " "); print $0; }' | \
@@ -104,9 +106,19 @@ if [ "${PYINSTALLER_INSTALLED:-notinstalled}" = "notinstalled" ]; then
     exit 1
 fi
 
-$CMD --collect-all tensorflow \
+app_options=$(cat<<EOF
+--collect-all tensorflow \
 --collect-all pptx \
 --add-data ../src/data:data --add-data ../src/astor:astor \
---add-data ../src/unrar:unrar --add-data ../src/templates:templates \
---icon ../macOS/application.icns \
-src/Polo.py
+--add-data ../src/unrar:unrar --add-data ../src/templates:templates
+EOF
+)
+
+echo "Running $CMD $app_options src/Polo.py"
+eval "$CMD $app_options src/Polo.py"
+if [ "$RUNNER" = "pyi-makespec" ]; then
+    cat <<EOF
+Run as:
+pyinstaller --clean -y macOS/Polo.spec
+EOF
+fi

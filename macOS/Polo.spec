@@ -3,8 +3,10 @@ from PyInstaller.utils.hooks import collect_all
 
 datas = [('../src/data', 'data'), ('../src/astor', 'astor'), ('../src/unrar', 'unrar'), ('../src/templates', 'templates')]
 binaries = []
-hiddenimports = ['pptx']
+hiddenimports = []
 tmp_ret = collect_all('tensorflow')
+datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+tmp_ret = collect_all('pptx')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
 
