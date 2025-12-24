@@ -22,7 +22,7 @@ OPTIONS
     -h Help.
 ----
 
-=== Create the Polo spec FIle
+=== Create the Polo spec File
 
 In the `Marco_Polo` top-level directory run:
 ----
