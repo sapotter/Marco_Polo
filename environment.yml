@@ -8,7 +8,7 @@ dependencies:
   - ca-certificates
   - certifi
   - openssl
-  - pyqt
+  - pyqt=5.15
   - jinja2
   - python-pptx
   - matplotlib
