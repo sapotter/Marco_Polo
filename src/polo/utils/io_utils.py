@@ -1484,9 +1484,13 @@ class BarTender():
             # search for a menu whos usage dates include this date
             # end up with a list of keys for menus of the specified type that
             # are sorted by the start date of their use at HWI cente
-            for each_key in menus_keys_by_date:
-                if date < self.menus[each_key].start_date:
+            for each_key in menus_keys_by_date[0:-1]:
+                #print(self.menus[each_key].start_date, date)
+                if (date >= self.menus[each_key].start_date and 
+                    date <= self.menus[each_key].end_date
+                    ):
                     return self.menus[each_key]
+        
         return self.menus[menus_keys_by_date[-1]]
 
     def get_menus_by_type(self, type_='s'):
@@ -1642,23 +1646,40 @@ class CocktailMenuReader():
                      for index in self.cocktail_map}
                 new_cocktail = Cocktail(**d)
                 new_cocktail.reagents = []
-                # BUG: when new cocktail is intialized it contains the reagents
+                # BUG: when new cocktail is initialized it contains the reagents
                 # of all previously initialized cocktails. For now setting
                 # new_cocktail.reagents to a new empty list fixes the
                 # problem but does not address the source
                 reagent_positions = [i for i in range(
                     len(row)) if i not in self.cocktail_map and i != self.formula_pos]
+
+
                 for i in range(0, len(reagent_positions), 2):
-                    chem_add, con = (row[reagent_positions[i]],
-                                     row[reagent_positions[i+1]])
-                    if chem_add:
-                        con = UnitValue.make_from_string(con)
-                        new_cocktail.add_reagent(
-                            Reagent(
-                                chemical_additive=chem_add,
-                                concentration=con
+                    try:
+                        chem_add, con = (row[reagent_positions[i]],
+                                        row[reagent_positions[i+1]])
+                        if chem_add:
+                            con = UnitValue.make_from_string(con)
+                            new_cocktail.add_reagent(
+                                Reagent(
+                                    chemical_additive=chem_add,
+                                    concentration=con
+                                )
                             )
-                        )
+                    except IndexError as e:
+                        # ETH 23
+                        # Added this catch as a stop gap after adding in the new cocktail
+                        # formulations. The csv file generated from the provided excel
+                        # for this formulation has some differences between the old
+                        # cocktail files that I have yet to determine that is causing
+                        # there to be an odd number of reagent concentration paired
+                        # columns. This function assumes for each chemical additive there
+                        # is an associated concentration. So if a list with an odd number
+                        # goes into this part of the function i+1 will throw an index error.
+                        # Making this change allows the program to launch but I need to
+                        # further investigate if the cocktails are being read correctly.
+                        continue
+                    
                 cocktail_menu[int(new_cocktail.well_assignment)] = new_cocktail
         return cocktail_menu
 

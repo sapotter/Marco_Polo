@@ -1,10 +1,16 @@
 #!/usr/bin/python3
+#import tensorflow_fix
 import sys, traceback
 import logging
 import multiprocessing
 import os
 import sys
 from pathlib import Path
+
+
+if getattr(sys, 'frozen', False):
+    application_path = os.path.dirname(sys.executable)
+    sys.path.insert(0, application_path)
 
 import PyQt5
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -14,6 +20,8 @@ from PyQt5.QtGui import QColor, QIcon, QPalette
 import astor
 from polo.windows.main_window import MainWindow
 from polo import *
+
+
 
 # set up logging
 logger = make_default_logger(__name__)

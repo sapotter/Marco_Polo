@@ -3,18 +3,19 @@ import os
 import re
 from pathlib import Path
 import sys
-import inspect
 import platform
 import tempfile
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 
 from PyQt5.QtGui import QBrush, QColor, QIcon, QPixmap
 from PyQt5 import QtWidgets
-from tensorflow.contrib.predictor import from_saved_model
+#from tensorflow.contrib.predictor import from_saved_model
 
-polo_version = '0.1.0'  # should be int.int.int format
 
-# In macOS, this is Polo.app/Contents/MacOS
+polo_version = '0.2.1'  # should be int.int.int format
 dirname = Path(os.path.dirname(__file__)).parent
 
 # macOS double-click launch starts with the working directory in "/", the
@@ -61,6 +62,22 @@ DEFAULT_IMAGE_PATH, BLANK_IMAGE = (
 
 # path to tensorflow marco model
 MODEL_PATH = DATA_DIR.joinpath('savedmodel')
+SESS = tf.Session(graph=tf.Graph())
+LOADED_MODEL = tf.saved_model.loader.load(
+    SESS, [tf.saved_model.tag_constants.SERVING], str(MODEL_PATH)
+)
+
+
+
+# LOADED_MODEL = tf.saved_model.load(str(MODEL_PATH))
+# @tf.function
+# def serve(x):
+#     return loaded_model(x)
+
+# #SESSION = tf.Session(graph=tf.Graph())
+# # LOADED_MODEL = tf.saved_model.loader.load(
+# #     SESSION, [tf.saved_model.tag_constants.SERVING], str(MODEL_PATH)
+# #     )
 
 
 # HTML jinja2 templates
@@ -78,7 +95,7 @@ ICON_DICT = {Path(icon).stem: ICONS.joinpath(icon)
 # DATA
 # =============================================================================
 
-MODEL = from_saved_model(str(MODEL_PATH))  # load tensorflow model
+
 ALLOWED_IMAGE_TYPES = {'.jpeg', '.png', '.jpg'}
 
 IMAGE_CLASSIFICATIONS = [
