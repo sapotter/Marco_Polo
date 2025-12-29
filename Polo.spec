@@ -16,7 +16,7 @@ from PyInstaller.building.datastruct import Tree
 import pptx
 
 cur_dir = Path().resolve()
-print(cur_dir)
+print('Current directory: ', cur_dir)
 
 block_cipher = None
 
@@ -37,7 +37,7 @@ a = Analysis(['src/Polo.py'],
                     ('src/unrar', 'unrar/'), ('src/templates', 'templates/'),
                     pptx_depends],
              hiddenimports=['tensorflow', 'tensorflow_core'],
-            hookspath=['hooks'],
+             hookspath=['hooks'],
              runtime_hooks=[],
              excludes=[],
              win_no_prefer_redirects=False,
@@ -45,8 +45,19 @@ a = Analysis(['src/Polo.py'],
              cipher=None,
              noarchive=False)
 
-import site
-site_packages = site.getsitepackages()[0]
+python_major, python_minor, *dummy = sys.version_info
+env_name = os.environ.get('CONDA_DEFAULT_ENV')
+
+# site.getsitepackages() is not a reliable way to get the "site-packages" path
+# import site
+# site_packages = site.getsitepackages()[0]
+
+# IMPORTANT 'purlib' != 'platlib' on all platforms. It is assumed here that they are the same.
+# Use sysconfig for better compatibility (especially with Python 3.9+)
+import sysconfig
+site_packages = sysconfig.get_paths()['purelib']
+print('site-packages:', site_packages)
+
 tf_path = os.path.join(site_packages, 'tensorflow')
 a.datas += Tree(tf_path, prefix='tensorflow', excludes=['*.pyc'])
 
