@@ -91,7 +91,7 @@ CMD=$(echo "$CMD" | \
 #fi
 
 declare -i errors=0
-if [ "$(basename "$(pwd)")" != "Marco_Polo" ]; then
+if [ "$(basename "$(pwd)")" != "Marco_Polo-fork" ]; then
     echo "ERROR: pyinstaller-macos.sh must be run in the Marco_Polo project root directory."
     _=$((errors++))
 fi
@@ -100,7 +100,7 @@ if [ "${CONDA_DEFAULT_ENV:-notpolo}" = "notpolo" ]; then
     _=$((errors++))
 fi
 [ $((errors)) -gt 0 ] && exit 1
-PYINSTALLER_INSTALLED=$(conda list -c pyinstaller | awk '/pypi\/pypi::pyinstaller-[[:digit:]]/ { print $0 }')
+PYINSTALLER_INSTALLED=$(conda list -c pyinstaller | awk '/defaults\/osx-.+::pyinstaller-[[:digit:]]/ { print $0 }')
 if [ "${PYINSTALLER_INSTALLED:-notinstalled}" = "notinstalled" ]; then
     echo "Install pyinstaller with: pip install pyinstaller"
     exit 1

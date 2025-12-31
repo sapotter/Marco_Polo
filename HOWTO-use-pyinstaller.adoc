@@ -2,8 +2,13 @@
 
 === Using `pyinstaller-macos.sh`
 
+[source,bash]
 ----
 ./pyinstall-macos.sh -h
+----
+
+[source,text]
+----
 NAME
     pyinstaller-macos.sh -- Create macOS App bundle
 
@@ -25,24 +30,44 @@ OPTIONS
 === Create the Polo spec File
 
 In the `Marco_Polo` top-level directory run:
+
+[source,bash]
 ----
-./pyinstaller-macos.sh -m -b -w
+./macos-pyinstaller.sh -m -b -w
+----
+
+[source,text]
+----
 Running pyi-makespec --osx-bundle-identifier org.hauptman-woodward.polo --icon ../macOS/application.icns --windowed --specpath macOS --collect-all tensorflow --collect-all pptx --add-data ../src/data:data --add-data ../src/astor:astor --add-data ../src/unrar:unrar --add-data ../src/templates:templates src/Polo.py
 Wrote macOS/Polo.spec.
-Now run pyinstaller.py to build the executable.
+----
+
+Now run `pyinstaller.py` to build the executable.
 Run as:
+
+[source,bash]
+----
 pyinstaller --clean -y macOS/Polo.spec
 ----
+
 This creates `macOS/Polo.spec` which will be used to produce the application bundle.
 
 === Create the Polo Application Bundle
 
+[source,bash]
 ----
 pyinstaller --clean -y macOS/Polo.spec
 ----
+
 The application bundle, `Polo.app`, is in directory `dist`:
+
+[source,bash]
 ----
 ls -l dist/
+----
+
+[source,text]
+----
 total 0
 drwxr-xr-x  80 potter  staff  2560 Apr 27 00:44 Polo
 drwxr-xr-x   3 potter  staff    96 Apr 27 00:44 Polo.app
