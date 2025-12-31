@@ -6,7 +6,33 @@ directory, but they can be customized with icons, backgrounds, and layout proper
 A DMG file (.dmg) is a macOS Disk Image file, and it is used to package files or folders
 providing compression, encryption, and read-only to the package.
 
-== Creating The DMG File
+== Creating The DMG File – New Way
+
+=== Homebrew – install `create-dmg` (requires `imagemagick`)
+
+[source,bash]
+----
+brew install create-dmg
+----
+
+=== Create the DMG
+
+In directory `~/PyCharmProjects/Marco_Polo-fork/dist`:
+
+[source,bash]
+----
+create-dmg --volname "Polo osx-arm64" \
+--volicon ../macOS/application.icns \
+--window-size 800 400 \
+--icon-size 200 \
+--icon "Polo.app" 200 190 \
+--hide-extension "Polo.app" \
+--app-drop-link 600 185 \
+--no-internet-enable \
+~/Desktop/'Polo osx-arm64.dmg' Polo.app
+----
+
+== Creating The DMG File – Old Way
 
 === Disk Utility
 
