@@ -42,17 +42,11 @@ Running pyi-makespec --osx-bundle-identifier org.hauptman-woodward.polo --icon .
 Wrote macOS/Polo.spec.
 ----
 
-Now run `pyinstaller.py` to build the executable.
-Run as:
-
-[source,bash]
-----
-pyinstaller --clean -y macOS/Polo.spec
-----
-
 This creates `macOS/Polo.spec` which will be used to produce the application bundle.
 
 === Create the Polo Application Bundle
+
+Now run `pyinstaller.py` to build the executable:
 
 [source,bash]
 ----
