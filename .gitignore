@@ -32,6 +32,7 @@ MANIFEST
 *.manifest
 *.spec
 # Keep specs in macos/ & Windows.
+!/Polo.spec
 !/macOS/*.spec
 !/Windows/*.spec
 
