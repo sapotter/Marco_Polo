@@ -10,6 +10,8 @@ providing compression, encryption, and read-only to the package.
 
 === Homebrew – install `create-dmg` (requires `imagemagick`)
 
+IMPORTANT: The background image should be 72 DPI, not 300 DPI or higher.
+
 [source,bash]
 ----
 brew install create-dmg
@@ -19,17 +21,36 @@ brew install create-dmg
 
 In directory `~/PyCharmProjects/Marco_Polo-fork/dist`:
 
+==== osx-arm64
+
 [source,bash]
 ----
-create-dmg --volname "Polo osx-arm64" \
+create-dmg --volname "Polo macOS-arm64" \
 --volicon ../macOS/application.icns \
---window-size 800 400 \
---icon-size 200 \
---icon "Polo.app" 200 190 \
+--background ../macOS/background.png \
+--window-size 800 450 \
+--icon-size 128 \
+--icon "Polo.app" 350 200 \
 --hide-extension "Polo.app" \
---app-drop-link 600 185 \
+--app-drop-link 600 195 \
 --no-internet-enable \
-~/Desktop/'Polo osx-arm64.dmg' Polo.app
+~/Desktop/'Polo macOS-arm64.dmg' Polo.app
+----
+
+==== osx-x64
+
+[source,bash]
+----
+create-dmg --volname "Polo macOS-x64" \
+--volicon ../macOS/application.icns \
+--background ../macOS/background.png \
+--window-size 800 450 \
+--icon-size 128 \
+--icon "Polo.app" 350 200 \
+--hide-extension "Polo.app" \
+--app-drop-link 600 195 \
+--no-internet-enable \
+~/Desktop/'Polo macOS-x64.dmg' Polo.app
 ----
 
 == Creating The DMG File – Old Way
