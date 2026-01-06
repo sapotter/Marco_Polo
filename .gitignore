@@ -278,3 +278,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### Project files
+/recents.txt
+/src/recents.txt
