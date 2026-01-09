@@ -1,0 +1,21 @@
+# ARM64 macOS: Use this environment file to create a conda environment for running PoLo on Apple Silicon or AMD GPUs.
+name: polo0.2.1
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12 # Recommended version for TensorFlow 2.18.1
+  - pyinstaller
+  - ca-certificates
+  - certifi
+  - openssl
+  - pyqt=5.15
+  - jinja2
+  - python-pptx
+  - matplotlib
+  - pip
+  - pip:
+    - molmass
+    # Pip packages for TensorFlow is the recommended way to install TensorFlow on Apple Silicon or AMD GPUs.
+    - tensorflow==2.18.1 # Recommended 2.18.1. Version 2.20.0 has issues with GPU acceleration.
+    - tensorflow-metal # Enable GPU acceleration on Apple Silicon or AMD GPUs.
