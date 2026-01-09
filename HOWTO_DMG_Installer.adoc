@@ -19,22 +19,22 @@ brew install create-dmg
 
 === Create the DMG
 
-In directory `~/PyCharmProjects/Marco_Polo-fork/dist`:
+In directory `~/PyCharmProjects/Marco_Polo-fork`:
 
 ==== osx-arm64
 
 [source,bash]
 ----
 create-dmg --volname "Polo macOS-arm64" \
---volicon ../macOS/application.icns \
---background ../macOS/background.png \
+--volicon macOS/application.icns \
+--background macOS/background.png \
 --window-size 800 450 \
 --icon-size 128 \
 --icon "Polo.app" 350 200 \
 --hide-extension "Polo.app" \
 --app-drop-link 600 195 \
 --no-internet-enable \
-~/Desktop/'Polo macOS-arm64.dmg' Polo.app
+~/Desktop/'Polo macOS-arm64.dmg' dist/Polo.app
 ----
 
 ==== osx-x64
@@ -42,15 +42,15 @@ create-dmg --volname "Polo macOS-arm64" \
 [source,bash]
 ----
 create-dmg --volname "Polo macOS-x64" \
---volicon ../macOS/application.icns \
---background ../macOS/background.png \
+--volicon macOS/application.icns \
+--background macOS/background.png \
 --window-size 800 450 \
 --icon-size 128 \
 --icon "Polo.app" 350 200 \
 --hide-extension "Polo.app" \
 --app-drop-link 600 195 \
 --no-internet-enable \
-~/Desktop/'Polo macOS-x64.dmg' Polo.app
+~/Desktop/'Polo macOS-x64.dmg' dist/Polo.app
 ----
 
 == Creating The DMG File – Old Way
