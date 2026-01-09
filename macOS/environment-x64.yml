@@ -15,6 +15,6 @@ dependencies:
   - matplotlib
   - pip
   - pip:
-    # Pip packages for TensorFlow is the recommended way to install TensorFlow.
     - molmass
-    - tensorflow # Default version 2.16.2, CPU only
+    # Pip packages for TensorFlow is the recommended way to install TensorFlow.
+    - tensorflow # CPU only; version 2.16.2: the last release to support macOS x86. Supports older NVIDIA GPUs (compute capability 5.0).
