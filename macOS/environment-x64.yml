@@ -1,0 +1,20 @@
+#X64 macOS: Use this environment file to create a conda environment for running PoLo on Intel-based Macs.
+name: polo0.2.1
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pyinstaller
+  - ca-certificates
+  - certifi
+  - openssl
+  - pyqt=5.15
+  - jinja2
+  - python-pptx
+  - matplotlib
+  - pip
+  - pip:
+    # Pip packages for TensorFlow is the recommended way to install TensorFlow.
+    - molmass
+    - tensorflow # Default version 2.16.2, CPU only
