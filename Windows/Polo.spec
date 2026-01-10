@@ -1,4 +1,6 @@
 # -*- mode: python ; coding: utf-8 -*-
+from PyInstaller.building.api import PYZ, EXE, COLLECT
+from PyInstaller.building.build_main import Analysis
 from PyInstaller.utils.hooks import collect_all
 
 datas = [('src/data', 'data'), ('src/astor', 'astor'), ('src/unrar', 'unrar'), ('src/templates', 'tenplates')]
@@ -7,9 +9,7 @@ hiddenimports = ['pptx']
 tmp_ret = collect_all('tensorflow')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
-
 block_cipher = None
-
 
 a = Analysis(['src/Polo.py'],
              pathex=[],
@@ -24,6 +24,7 @@ a = Analysis(['src/Polo.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
+
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 
@@ -41,6 +42,7 @@ exe = EXE(pyz,
           target_arch=None,
           codesign_identity=None,
           entitlements_file=None , icon='Windows/appplication.ico')
+
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
