@@ -1,4 +1,9 @@
+import platform
 import tensorflow as tf
+
+print(f"TensorFlow version: {tf.__version__}")
+print(f"Python version: {platform.python_version()}")
+print(f"Platform: {platform.platform()} on {platform.node()}")
 
 # 1. Check for physical GPU device
 gpu_devices = tf.config.list_physical_devices('GPU')

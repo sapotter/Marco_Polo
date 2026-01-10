@@ -1,4 +1,9 @@
+import platform
 import tensorflow as tf
+
+print(f"TensorFlow version: {tf.__version__}")
+print(f"Python version: {platform.python_version()}")
+print(f"Platform: {platform.platform()} on {platform.node()}")
 
 cifar = tf.keras.datasets.cifar100
 (x_train, y_train), (x_test, y_test) = cifar.load_data()
