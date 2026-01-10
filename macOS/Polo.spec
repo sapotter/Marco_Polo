@@ -1,20 +1,35 @@
 # -*- mode: python ; coding: utf-8 -*-
+from pathlib import Path
+
 from PyInstaller.building.api import PYZ, EXE, COLLECT
 from PyInstaller.building.build_main import Analysis
 from PyInstaller.utils.hooks import collect_all
 
-datas = [('../src/data', 'data'), ('../src/astor', 'astor'), ('../src/unrar', 'unrar'), ('../src/templates', 'templates')]
+cur_dir = Path().resolve()
+print('Current directory: ', cur_dir)
+src_dir = cur_dir.joinpath('src')
+
+block_cipher = None
+
+datas = [
+    (src_dir.joinpath('data'), 'data'),
+    (src_dir.joinpath('astor'), 'astor'),
+    (src_dir.joinpath('unrar'), 'unrar'),
+    (src_dir.joinpath('templates'), 'templates'),
+]
+
 binaries = []
 hiddenimports = []
+
 tmp_ret = collect_all('tensorflow')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+
 tmp_ret = collect_all('pptx')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
-
 a = Analysis(
-    ['../src/Polo.py'],
-    pathex=[],
+    [src_dir.joinpath('Polo.py')],
+    pathex=[src_dir],
     binaries=binaries,
     datas=datas,
     hiddenimports=hiddenimports,
@@ -25,7 +40,8 @@ a = Analysis(
     noarchive=False,
     optimize=0,
 )
-pyz = PYZ(a.pure)
+
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
     pyz,
@@ -43,8 +59,9 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['../macOS/application.icns'],
+    icon=[cur_dir.joinpath('macOS/application.icns')],
 )
+
 coll = COLLECT(
     exe,
     a.binaries,
@@ -54,9 +71,10 @@ coll = COLLECT(
     upx_exclude=[],
     name='Polo',
 )
+
 app = BUNDLE(
     coll,
     name='Polo.app',
-    icon='../macOS/application.icns',
+    icon=cur_dir.joinpath('macOS/application.icns'),
     bundle_identifier='org.hauptman-woodward.polo',
 )
