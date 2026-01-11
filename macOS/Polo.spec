@@ -1,15 +1,21 @@
 # -*- mode: python ; coding: utf-8 -*-
+import os
+import sys
+import sysconfig
 from pathlib import Path
 
 from PyInstaller.building.api import PYZ, EXE, COLLECT
 from PyInstaller.building.build_main import Analysis
-from PyInstaller.utils.hooks import collect_all
 
 cur_dir = Path().resolve()
 print('Current directory: ', cur_dir)
 src_dir = cur_dir.joinpath('src')
 
-block_cipher = None
+python_major, python_minor, *dummy = sys.version_info
+env_name = os.environ.get('CONDA_DEFAULT_ENV')
+print('env_name:', env_name)
+site_packages = sysconfig.get_paths()['purelib']
+print('site-packages:', site_packages)
 
 datas = [
     (src_dir.joinpath('data'), 'data'),
@@ -18,30 +24,24 @@ datas = [
     (src_dir.joinpath('templates'), 'templates'),
 ]
 
-binaries = []
-hiddenimports = []
-
-tmp_ret = collect_all('tensorflow')
-datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
-
-tmp_ret = collect_all('pptx')
-datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+block_cipher = None
 
 a = Analysis(
     [src_dir.joinpath('Polo.py')],
     pathex=[src_dir],
-    binaries=binaries,
+    binaries=[],
     datas=datas,
-    hiddenimports=hiddenimports,
+    hiddenimports=['tensorflow', 'pptx'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
     excludes=[],
+    cipher=block_cipher,
     noarchive=False,
-    optimize=0,
+    optimize=0,  # Default level: no optimization, __debug__ constant is True, assert statements are active
 )
 
-pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data, cipher=None)
 
 exe = EXE(
     pyz,
@@ -64,11 +64,12 @@ exe = EXE(
 
 coll = COLLECT(
     exe,
+    a.scripts,
     a.binaries,
+    a.zipfiles,
     a.datas,
     strip=False,
     upx=True,
-    upx_exclude=[],
     name='Polo',
 )
 
