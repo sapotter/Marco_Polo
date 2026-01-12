@@ -1,4 +1,7 @@
-#X64 macOS: Use this environment file to create a conda environment for running PoLo on Intel-based Macs.
+# X64 macOS: Use this environment file to create a conda environment for running PoLo on Intel-based Macs.
+# Set up .condarc:
+# conda config --add channels conda-forge
+# conda config --set channel_priority strict
 name: polo0.2.1
 channels:
   - conda-forge
