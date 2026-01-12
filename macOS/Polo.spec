@@ -48,18 +48,18 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='Polo',
-    debug=False,
     bootloader_ignore_signals=False,
-    strip=False,
-    upx=True,
     console=False,
     disable_windowed_traceback=False,
+    debug=False,
+    name='Polo',
+    icon=[cur_dir.joinpath('macOS/application.icns')],
+    strip=False,
+    upx=True,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=[cur_dir.joinpath('macOS/application.icns')],
 )
 
 coll = COLLECT(
