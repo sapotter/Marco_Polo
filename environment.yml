@@ -1,13 +1,9 @@
-# Windows environment.yml
-# Set up .condarc:
-# conda config --add channels conda-forge
-# conda config --set channel_priority strict
 name: polo0.2.1
 channels:
-  - conda-forge
   - defaults
+  - conda-forge
 dependencies:
-  - python=3.12 # Recommended version for TensorFlow 2.18.1
+  - tensorflow
   - pyinstaller
   - ca-certificates
   - certifi
@@ -19,5 +15,3 @@ dependencies:
   - pip
   - pip:
     - molmass
-    # Pip packages for TensorFlow is the recommended way to install TensorFlow.
-    - tensorflow
