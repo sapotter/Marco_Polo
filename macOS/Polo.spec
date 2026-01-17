@@ -41,7 +41,7 @@ a = Analysis(
     optimize=0,  # Default level: no optimization, __debug__ constant is True, assert statements are active
 )
 
-pyz = PYZ(a.pure, a.zipped_data, cipher=None)
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 # For a macOS bundle created in onedir mode (the default for an app bundle), exclude_binaries=True is generally
 # required in the EXE object of your PyInstaller spec file. This is because the binaries are collected by the
