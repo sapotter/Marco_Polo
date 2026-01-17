@@ -14,7 +14,7 @@ $(echo -e ${BOLD}NAME${NC})
     $(basename "$0") -- Create macOS App bundle
 
 $(echo -e ${BOLD}SYNOPSIS${NC})
-    $(basename "$0") [-m] [-b | -d | -o | -w] [-s [spec-path]] [-h]
+    $(basename "$0") [-m] [-b | -d | -o | -w] [-n [spec-name] [-s [spec-path]] [-h]
 
 $(echo -e ${BOLD}OPTIONS${NC})
     -m Run pyi-makespec. Default: pyinstaller.
@@ -24,6 +24,7 @@ $(echo -e ${BOLD}OPTIONS${NC})
        components. Default.
     -f Create a single file application.
     -w Create a macOS application bundle.
+    -n Name to assign to the bundled app and spec file.
     -s Specify the "spec" file directory path. Default: ./macOS.
     -h Help.
 
@@ -38,10 +39,12 @@ EOT
 # shellcheck disable=SC2223
 : ${BUNDLE_ID:=edu.buffalo.hwi.polo}
 # shellcheck disable=SC2223
-: ${ICONFILE:=../macOS/application.icns}
+: ${ICONFILE:=macOS/application.icns}
+# shellcheck disable=SC2223
+: ${SPEC_NAME:=Polo}
 
 icon="--icon $ICONFILE"
-while getopts "mbdfws:h" option; do
+while getopts "mbdfwn:s:h" option; do
     case $option in
         m)
             RUNNER="pyi-makespec"
@@ -57,6 +60,8 @@ while getopts "mbdfws:h" option; do
             ;;
         w)
             windowed="--windowed"
+            ;;
+        n) SPEC_NAME="${OPTARG}"
             ;;
         s)
             SPEC_PATH=$OPTARG
@@ -100,17 +105,18 @@ if [ "${CONDA_DEFAULT_ENV:-notpolo}" = "notpolo" ]; then
     _=$((errors++))
 fi
 [ $((errors)) -gt 0 ] && exit 1
-PYINSTALLER_INSTALLED=$(conda list -c pyinstaller | awk '/defaults\/osx-.+::pyinstaller-[[:digit:]]/ { print $0 }')
+PYINSTALLER_INSTALLED=$(conda list -c pyinstaller | awk '/(conda-forge|defaults)\/osx-.+::pyinstaller-[[:digit:]]/ { print $0 }')
 if [ "${PYINSTALLER_INSTALLED:-notinstalled}" = "notinstalled" ]; then
     echo "Install pyinstaller with: pip install pyinstaller"
     exit 1
 fi
 
 app_options=$(cat<<EOF
---collect-all tensorflow \
---collect-all pptx \
---add-data ../src/data:data --add-data ../src/astor:astor \
---add-data ../src/unrar:unrar --add-data ../src/templates:templates
+-p src \
+--hiddenimport tensorflow \
+--hiddenimport pptx \
+--add-data src/data:data --add-data src/astor:astor \
+--add-data src/unrar:unrar --add-data src/templates:templates
 EOF
 )
 
@@ -119,6 +125,6 @@ eval "$CMD $app_options src/Polo.py"
 if [ "$RUNNER" = "pyi-makespec" ]; then
     cat <<EOF
 Run as:
-pyinstaller --clean -y macOS/Polo.spec
+pyinstaller --clean -y ${SPEC_PATH}/Polo.spec
 EOF
 fi
