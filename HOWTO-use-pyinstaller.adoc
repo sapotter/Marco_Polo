@@ -38,7 +38,7 @@ In the `Marco_Polo` top-level directory run:
 
 [source,text]
 ----
-Running pyi-makespec --osx-bundle-identifier org.hauptman-woodward.polo --icon ../macOS/application.icns --windowed --specpath macOS --collect-all tensorflow --collect-all pptx --add-data ../src/data:data --add-data ../src/astor:astor --add-data ../src/unrar:unrar --add-data ../src/templates:templates src/Polo.py
+Running pyi-makespec --osx-bundle-identifier edu.buffalo.hwi.polo --icon ../macOS/application.icns --windowed --specpath macOS --collect-all tensorflow --collect-all pptx --add-data ../src/data:data --add-data ../src/astor:astor --add-data ../src/unrar:unrar --add-data ../src/templates:templates src/Polo.py
 Wrote macOS/Polo.spec.
 ----
 
