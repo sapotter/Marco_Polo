@@ -36,7 +36,7 @@ EOT
 # shellcheck disable=SC2223
 : ${SPEC_PATH:=macOS}
 # shellcheck disable=SC2223
-: ${BUNDLE_ID:=org.hauptman-woodward.polo}
+: ${BUNDLE_ID:=edu.buffalo.hwi.polo}
 # shellcheck disable=SC2223
 : ${ICONFILE:=../macOS/application.icns}
 
