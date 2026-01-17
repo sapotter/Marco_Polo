@@ -43,23 +43,30 @@ a = Analysis(
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=None)
 
+# For a macOS bundle created in onedir mode (the default for an app bundle), exclude_binaries=True is generally
+# required in the EXE object of your PyInstaller spec file. This is because the binaries are collected by the
+# COLLECT object instead.
+#
+# If you are creating a onefile bundle, exclude_binaries=False (or omitting the argument, as False is the default)
+# should be used.
+
 exe = EXE(
     pyz,
     a.scripts,
     [],
-    exclude_binaries=True,
-    bootloader_ignore_signals=False,
-    console=False,
-    disable_windowed_traceback=False,
-    debug=False,
+    exclude_binaries=True,  # True is required for a macOS bundle app
     name='Polo',
-    icon=[cur_dir.joinpath('macOS/application.icns')],
+    debug=False,
+    bootloader_ignore_signals=False,
     strip=False,
     upx=True,
+    console=False,
+    disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=[cur_dir.joinpath('macOS/application.icns')],
 )
 
 coll = COLLECT(
@@ -70,12 +77,24 @@ coll = COLLECT(
     a.datas,
     strip=False,
     upx=True,
+    upx_exclude=[],
     name='Polo',
 )
 
 app = BUNDLE(
     coll,
     name='Polo.app',
+    info_plist={
+        'NSPrincipalClass': 'NSApplication',
+        'NSAppleScriptEnabled': False,
+        # Add other Info.plist entries as a Python dict here
+        'CFBundleDisplayName': 'Polo',
+        'CFBundleName': 'Polo',
+        'CFBundlePackageType': 'APPL',
+        'CFBundleShortVersionString': '0.2.1.1',
+        'CFBundleVersion': '0.2.1.1',
+        'NSHumanReadableCopyright': 'Copyright (c) 2025, University At Buffalo - Hauptman-Woodward Research Institute. All rights reserved.',
+    },
     icon=cur_dir.joinpath('macOS/application.icns'),
-    bundle_identifier='org.hauptman-woodward.polo',
+    bundle_identifier='edu.buffalo.hwi.polo',
 )
