@@ -18,7 +18,7 @@ dependencies:
   - matplotlib
   - pip
   - pip:
-    - molmass
-    # Pip packages for TensorFlow is the recommended way to install TensorFlow on Apple Silicon or AMD GPUs.
-    - tensorflow==2.18.1 # Recommended 2.18.1. Version 2.20.0 has issues with GPU acceleration.
-    - tensorflow-metal # Enable GPU acceleration on Apple Silicon or AMD GPUs.
+      - molmass
+      # Pip packages for TensorFlow is the recommended way to install TensorFlow on Apple Silicon or AMD GPUs.
+      - tensorflow==2.18.1 # Recommended 2.18.1. Version 2.20.0 has issues with GPU acceleration.
+      - tensorflow-metal # Enable GPU acceleration on Apple Silicon or AMD GPUs.
