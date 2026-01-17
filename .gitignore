@@ -35,6 +35,7 @@ MANIFEST
 !/Polo.spec
 !/macOS/*.spec
 !/Windows/*.spec
+!/test/*.spec
 
 # Installer logs
 pip-log.txt
