@@ -1,0 +1,166 @@
+1857 INFO: PyInstaller: 6.15.0, contrib hooks: 2025.8
+1857 INFO: Python: 3.9.23 (conda)
+2049 INFO: Platform: macOS-15.7.5-x86_64-i386-64bit
+2049 INFO: Python environment: /usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39
+2058 INFO: Removing temporary files and cleaning cache in /Users/potter/Library/Application Support/pyinstaller
+2305 INFO: Module search paths (PYTHONPATH):
+['/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/bin',
+ '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python39.zip',
+ '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9',
+ '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/lib-dynload',
+ '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages',
+ '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/setuptools/_vendor',
+ '/Users/potter/PyCharmProjects/Marco_Polo-fork/src',
+ '/Users/potter/PyCharmProjects/Marco_Polo-fork/src']
+4323 INFO: Appending 'datas' from .spec
+4334 INFO: checking Analysis
+4334 INFO: Building Analysis because Analysis-00.toc is non existent
+4334 INFO: Running Analysis Analysis-00.toc
+4334 INFO: Target bytecode optimization level: 0
+4335 INFO: Initializing module dependency graph...
+4340 INFO: Initializing module graph hook caches...
+4370 INFO: Analyzing modules for base_library.zip ...
+7158 INFO: Processing standard module hook 'hook-encodings.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+10532 INFO: Processing standard module hook 'hook-pickle.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+11657 INFO: Processing standard module hook 'hook-heapq.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+12962 INFO: Caching module dependency graph...
+13025 INFO: Looking for Python shared library...
+13046 INFO: Using Python shared library: /usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/libpython3.9.dylib
+13046 INFO: Analyzing /Users/potter/PyCharmProjects/Marco_Polo-fork/src/Polo.py
+13125 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+13389 INFO: Processing standard module hook 'hook-xml.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+13960 INFO: Processing standard module hook 'hook-_ctypes.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+14003 INFO: Processing standard module hook 'hook-PyQt5.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+14410 INFO: Processing standard module hook 'hook-PyQt5.QtCore.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+14682 INFO: Processing standard module hook 'hook-PyQt5.QtGui.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+15349 INFO: Processing standard module hook 'hook-PyQt5.QtWidgets.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+15659 INFO: Processing standard module hook 'hook-astor.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+15721 INFO: Processing standard module hook 'hook-platform.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+15799 INFO: Processing pre-safe-import-module hook 'hook-tensorflow.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/pre_safe_import_module'
+15837 INFO: Processing standard module hook 'hook-tensorflow.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+15857 INFO: hook-tensorflow: tensorflow dist name: tensorflow
+15858 INFO: hook-tensorflow: tensorflow version: 2.16.2
+7712 WARNING: Failed to collect submodules for 'keras.src.backend.torch' because importing 'keras.src.backend.torch' raised: ModuleNotFoundError: No module named 'torch'
+64922 WARNING: collect_dynamic_libs - skipping library collection for module 'tensorflow-plugins' as it is not a package.
+64926 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+64936 INFO: Processing pre-find-module-path hook 'hook-distutils.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_find_module_path'
+65519 INFO: Processing standard module hook 'hook-distutils.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+65520 INFO: SetuptoolsInfo: initializing cached setuptools info...
+71872 INFO: Processing standard module hook 'hook-sysconfig.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+71897 INFO: Processing standard module hook 'hook-_osx_support.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+72680 INFO: Processing standard module hook 'hook-numpy.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+73857 INFO: Processing standard module hook 'hook-difflib.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+76472 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+78326 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+83963 INFO: Processing pre-safe-import-module hook 'hook-six.moves.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+89380 INFO: Processing standard module hook 'hook-urllib3.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+89537 INFO: Processing standard module hook 'hook-backports.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+90295 INFO: Processing standard module hook 'hook-charset_normalizer.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+90531 INFO: Processing standard module hook 'hook-certifi.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+92384 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+95231 INFO: Processing standard module hook 'hook-pygments.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+105020 INFO: Processing standard module hook 'hook-PIL.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+105134 INFO: Processing standard module hook 'hook-PIL.Image.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+106593 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+106906 INFO: Processing standard module hook 'hook-PIL.ImageFilter.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+108138 INFO: Processing standard module hook 'hook-h5py.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+111553 INFO: Processing standard module hook 'hook-matplotlib.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+112389 INFO: Processing pre-safe-import-module hook 'hook-gi.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+113381 INFO: Processing standard module hook 'hook-jinja2.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+114195 INFO: Processing standard module hook 'hook-matplotlib.backends.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+114311 INFO: Processing standard module hook 'hook-matplotlib.pyplot.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+115132 INFO: Processing standard module hook 'hook-matplotlib.backend_bases.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+115980 INFO: Processing standard module hook 'hook-dateutil.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+118688 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+118700 INFO: Processing standard module hook 'hook-importlib_resources.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+118791 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+128662 INFO: Processing standard module hook 'hook-grpc.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+137198 INFO: Processing standard module hook 'hook-pptx.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+138697 INFO: Processing standard module hook 'hook-lxml.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+140049 INFO: Processing standard module hook 'hook-lxml.etree.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+142322 INFO: Processing standard module hook 'hook-PyQt5.uic.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+142895 INFO: Processing pre-find-module-path hook 'hook-PyQt5.uic.port_v2.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_find_module_path'
+143571 INFO: Processing standard module hook 'hook-matplotlib.backends.backend_qtagg.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+143588 INFO: Processing standard module hook 'hook-matplotlib.backends.qt_compat.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+143589 INFO: hook-matplotlib.backends.qt_compat: selected 'PyQt5' as Qt bindings because hook for 'PyQt5' has been run before.
+144322 INFO: Processing module hooks (post-graph stage)...
+148909 INFO: Processing standard module hook 'hook-setuptools.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+148987 INFO: Processing standard module hook 'hook-distutils.util.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+149293 INFO: Processing pre-safe-import-module hook 'hook-jaraco.text.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+149296 INFO: Setuptools: 'jaraco.text' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.text'!
+149306 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+149308 INFO: Processing pre-safe-import-module hook 'hook-jaraco.functools.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+149310 INFO: Setuptools: 'jaraco.functools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.functools'!
+149401 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+149402 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+149506 INFO: Processing pre-safe-import-module hook 'hook-jaraco.context.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+149510 INFO: Setuptools: 'jaraco.context' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.context'!
+149526 INFO: Processing pre-safe-import-module hook 'hook-backports.tarfile.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+149530 INFO: Setuptools: 'backports.tarfile' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.backports.tarfile'!
+149768 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+149805 INFO: Processing standard module hook 'hook-importlib_metadata.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+150270 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+151149 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_safe_import_module'
+152238 INFO: Processing standard module hook 'hook-lxml.isoschematron.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+152279 WARNING: Hidden import "charset_normalizer.md__mypyc" not found!
+153154 WARNING: Hidden import "importlib_resources.trees" not found!
+153610 INFO: Processing standard module hook 'hook-PIL.SpiderImagePlugin.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+153720 INFO: Processing standard module hook 'hook-matplotlib.backends.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+153721 INFO: Matplotlib backend selection method: automatic discovery of used backends
+153737 INFO: Discovered Matplotlib backend(s) via `matplotlib.use()` call in module 'polo.plots.plots': ['QT5Agg']
+153737 INFO: The following Matplotlib backends were discovered by scanning for `matplotlib.use()` calls: ['QT5Agg']. If your backend of choice is not in this list, either add a `matplotlib.use()` call to your code, or configure the backend collection via hook options (see: https://pyinstaller.org/en/stable/hooks-config.html#matplotlib-hooks).
+153737 INFO: Selected matplotlib backends: ['QT5Agg']
+158719 INFO: Processing standard module hook 'hook-lxml.objectify.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+158778 INFO: Performing binary vs. data reclassification (475 entries)
+159975 INFO: Looking for ctypes DLLs
+159988 WARNING: Library libc.so.6 required via ctypes not found
+159996 WARNING: Library user32 required via ctypes not found
+160030 INFO: Analyzing run-time hooks ...
+160061 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/rthooks'
+160065 INFO: Including run-time hook 'pyi_rth_inspect.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/rthooks'
+160068 INFO: Including run-time hook 'pyi_rth_tensorflow.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/_pyinstaller_hooks_contrib/rthooks'
+160078 INFO: Including run-time hook 'pyi_rth_mplconfig.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/rthooks'
+160085 INFO: Processing pre-find-module-path hook 'hook-_pyi_rth_utils.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/pre_find_module_path'
+160098 INFO: Processing standard module hook 'hook-_pyi_rth_utils.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks'
+160104 INFO: Including run-time hook 'pyi_rth_setuptools.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/rthooks'
+160108 INFO: Including run-time hook 'pyi_rth_pyqt5.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/rthooks'
+160132 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from '/usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/hooks/rthooks'
+160261 INFO: Creating base_library.zip...
+160341 INFO: Looking for dynamic libraries
+162933 INFO: Warnings written to /Users/potter/PyCharmProjects/Marco_Polo-fork/build/Polo/warn-Polo.txt
+163446 INFO: Graph cross-reference written to /Users/potter/PyCharmProjects/Marco_Polo-fork/build/Polo/xref-Polo.html
+164377 INFO: checking PYZ
+164377 INFO: Building PYZ because PYZ-00.toc is non existent
+164377 INFO: Building PYZ (ZlibArchive) /Users/potter/PyCharmProjects/Marco_Polo-fork/build/Polo/PYZ-00.pyz
+168483 INFO: Building PYZ (ZlibArchive) /Users/potter/PyCharmProjects/Marco_Polo-fork/build/Polo/PYZ-00.pyz completed successfully.
+168634 INFO: EXE target arch: x86_64
+168634 INFO: Code signing identity: None
+168640 INFO: checking PKG
+168641 INFO: Building PKG because PKG-00.toc is non existent
+168641 INFO: Building PKG (CArchive) Polo.pkg
+168696 INFO: Building PKG (CArchive) Polo.pkg completed successfully.
+168697 INFO: Bootloader /usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages/PyInstaller/bootloader/Darwin-64bit/runw
+168697 INFO: checking EXE
+168697 INFO: Building EXE because EXE-00.toc is non existent
+168697 INFO: Building EXE from EXE-00.toc
+168697 INFO: Copying bootloader EXE to /Users/potter/PyCharmProjects/Marco_Polo-fork/build/Polo/Polo
+168705 INFO: Converting EXE to target arch (x86_64)
+168713 INFO: Removing signature(s) from EXE
+168851 INFO: Modifying Mach-O image UUID(s) in EXE
+168940 INFO: Appending PKG archive to EXE
+168971 INFO: Fixing EXE headers for code signing
+168996 INFO: Re-signing the EXE
+169270 INFO: Building EXE from EXE-00.toc completed successfully.
+169285 INFO: checking COLLECT
+169285 INFO: Building COLLECT because COLLECT-00.toc is non existent
+169286 INFO: Building COLLECT COLLECT-00.toc
+326397 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+326452 INFO: checking BUNDLE
+326453 INFO: Building BUNDLE because BUNDLE-00.toc is non existent
+326453 INFO: Building BUNDLE BUNDLE-00.toc
+370126 INFO: Signing the BUNDLE...
+378193 INFO: Building BUNDLE BUNDLE-00.toc completed successfully.
+378223 INFO: Build complete! The results are available in: /Users/potter/PyCharmProjects/Marco_Polo-fork/dist
+Current directory:  /Users/potter/PyCharmProjects/Marco_Polo-fork
+env_name: polo0.2.1-py39
+site-packages: /usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39/lib/python3.9/site-packages
