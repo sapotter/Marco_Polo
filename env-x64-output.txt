@@ -1,0 +1,281 @@
+conda-forge/noarch                                          Using cache
+conda-forge/osx-64                                          Using cache
+
+
+Transaction
+
+  Prefix: /usr/local/Caskroom/miniforge/base/envs/polo0.2.1-py39
+
+  Updating specs:
+
+   - python=3.9
+   - pyinstaller
+   - ca-certificates
+   - certifi
+   - openssl
+   - pyqt=5.15
+   - jinja2
+   - python-pptx
+   - matplotlib
+   - pip
+
+
+  Package                           Version  Build                Channel           Size
+──────────────────────────────────────────────────────────────────────────────────────────
+  Install:
+──────────────────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex                       4.5  7_kmp_llvm           conda-forge     Cached
+  + altgraph                         0.17.4  pyhd8ed1ab_1         conda-forge     Cached
+  + brotli                            1.2.0  hf139dec_1           conda-forge     Cached
+  + brotli-bin                        1.2.0  h8616949_1           conda-forge     Cached
+  + bzip2                             1.0.8  h500dc9f_9           conda-forge     Cached
+  + ca-certificates               2026.4.22  hbd8a1cb_0           conda-forge     Cached
+  + certifi                        2025.8.3  pyhd8ed1ab_0         conda-forge     Cached
+  + contourpy                         1.3.0  py39h0d3c867_2       conda-forge     Cached
+  + cycler                           0.12.1  pyhd8ed1ab_1         conda-forge     Cached
+  + cyrus-sasl                       2.1.28  h610c526_0           conda-forge     Cached
+  + fonttools                        4.59.1  py39h2753485_0       conda-forge     Cached
+  + freetype                         2.14.3  h694c41f_0           conda-forge     Cached
+  + glib                             2.88.0  hf35a506_0           conda-forge     Cached
+  + glib-tools                       2.88.0  h2ddd286_0           conda-forge     Cached
+  + gst-plugins-base                1.24.11  h09840cc_0           conda-forge     Cached
+  + gstreamer                       1.24.11  h7d1b200_0           conda-forge     Cached
+  + icu                                75.1  h120a0e1_0           conda-forge     Cached
+  + importlib-metadata                8.7.0  pyhe01879c_1         conda-forge     Cached
+  + importlib-resources               6.5.2  pyhd8ed1ab_0         conda-forge     Cached
+  + importlib_resources               6.5.2  pyhd8ed1ab_0         conda-forge     Cached
+  + jinja2                            3.1.6  pyhd8ed1ab_0         conda-forge     Cached
+  + kiwisolver                        1.4.7  py39h0d8d0ca_0       conda-forge     Cached
+  + krb5                             1.21.3  h37d8d59_0           conda-forge     Cached
+  + lcms2                              2.19  h5ea7634_0           conda-forge     Cached
+  + lerc                              4.1.0  h35c7297_0           conda-forge     Cached
+  + libblas                          3.11.0  6_he492b99_openblas  conda-forge     Cached
+  + libbrotlicommon                   1.2.0  h8616949_1           conda-forge     Cached
+  + libbrotlidec                      1.2.0  h8616949_1           conda-forge     Cached
+  + libbrotlienc                      1.2.0  h8616949_1           conda-forge     Cached
+  + libcblas                         3.11.0  6_h9b27e0a_openblas  conda-forge     Cached
+  + libclang-cpp18.1                 18.1.8  default_h9399c5b_18  conda-forge     Cached
+  + libclang13                       21.1.0  default_h7f9524c_1   conda-forge     Cached
+  + libcxx                           22.1.4  h19cb2f5_0           conda-forge     Cached
+  + libdeflate                         1.25  h517ebb2_0           conda-forge     Cached
+  + libedit                    3.1.20250104  pl5321ha958ccf_0     conda-forge     Cached
+  + libexpat                          2.7.5  hcc62823_0           conda-forge     Cached
+  + libffi                            3.5.2  hd1f9c09_0           conda-forge     Cached
+  + libfreetype                      2.14.3  h694c41f_0           conda-forge     Cached
+  + libfreetype6                     2.14.3  h58fbd8d_0           conda-forge     Cached
+  + libgcc                           15.2.0  h08519bb_18          conda-forge     Cached
+  + libgfortran                      15.2.0  h7e5c614_18          conda-forge     Cached
+  + libgfortran5                     15.2.0  hd16e46c_18          conda-forge     Cached
+  + libglib                          2.88.0  h7065de2_0           conda-forge     Cached
+  + libiconv                           1.18  h57a12c2_2           conda-forge     Cached
+  + libintl                          0.25.1  h3184127_1           conda-forge     Cached
+  + libintl-devel                    0.25.1  h3184127_1           conda-forge     Cached
+  + libjpeg-turbo                   3.1.4.1  ha1e9b39_0           conda-forge     Cached
+  + liblapack                        3.11.0  6_h859234e_openblas  conda-forge     Cached
+  + libllvm18                        18.1.8  default_hd2a208e_9   conda-forge     Cached
+  + libllvm21                        21.1.0  h9b4ebcc_0           conda-forge     Cached
+  + liblzma                           5.8.3  hbb4bfdb_0           conda-forge     Cached
+  + libntlm                             1.8  h6e16a3a_0           conda-forge     Cached
+  + libogg                            1.3.5  he3325bb_1           conda-forge     Cached
+  + libopenblas                      0.3.32  openmp_h9e49c7b_0    conda-forge     Cached
+  + libopus                           1.6.1  hc6ced15_0           conda-forge     Cached
+  + libpng                           1.6.58  he930e7c_0           conda-forge     Cached
+  + libpq                              18.1  h1e038c5_2           conda-forge     Cached
+  + libsqlite                        3.53.0  h77d7759_0           conda-forge     Cached
+  + libtiff                           4.7.1  ha0a348c_1           conda-forge     Cached
+  + libvorbis                         1.3.7  ha059160_2           conda-forge     Cached
+  + libwebp-base                      1.6.0  hb807250_0           conda-forge     Cached
+  + libxcb                           1.17.0  hf1f96e2_0           conda-forge     Cached
+  + libxml2                          2.13.9  he1bc88e_0           conda-forge     Cached
+  + libxslt                          1.1.43  h59ddae0_0           conda-forge     Cached
+  + libzlib                           1.3.2  hbb4bfdb_2           conda-forge     Cached
+  + llvm-openmp                      22.1.4  h0d3cbff_0           conda-forge     Cached
+  + lxml                              6.0.0  py39he07ef2a_0       conda-forge     Cached
+  + macholib                         1.16.4  pyhd8ed1ab_0         conda-forge     Cached
+  + markupsafe                        3.0.2  py39hd18e689_1       conda-forge     Cached
+  + matplotlib                        3.9.4  py39h6e9494a_0       conda-forge     Cached
+  + matplotlib-base                   3.9.4  py39hda06d36_0       conda-forge     Cached
+  + munkres                           1.1.4  pyhd8ed1ab_1         conda-forge     Cached
+  + ncurses                             6.6  hcc0dc9a_0           conda-forge     Cached
+  + nspr                               4.38  hee0b3f1_0           conda-forge     Cached
+  + nss                               3.118  h2b2a826_0           conda-forge     Cached
+  + numpy                             2.0.2  py39h277832c_1       conda-forge     Cached
+  + openjpeg                          2.5.4  h52bb76a_0           conda-forge     Cached
+  + openldap                         2.6.10  hd8a590d_0           conda-forge     Cached
+  + openssl                           3.6.2  hc881268_0           conda-forge     Cached
+  + packaging                          26.2  pyhc364b38_0         conda-forge     Cached
+  + pcre2                             10.47  h13923f0_0           conda-forge     Cached
+  + pillow                           11.3.0  py39h1fda9f2_0       conda-forge     Cached
+  + pip                                25.2  pyh8b19718_0         conda-forge     Cached
+  + ply                                3.11  pyhd8ed1ab_3         conda-forge     Cached
+  + pthread-stubs                       0.4  h00291cd_1002        conda-forge     Cached
+  + pyinstaller                      6.15.0  py39hfb924e9_0       conda-forge     Cached
+  + pyinstaller-hooks-contrib        2025.8  pyhd8ed1ab_0         conda-forge     Cached
+  + pyparsing                         3.2.3  pyhe01879c_2         conda-forge     Cached
+  + pyqt                            5.15.11  py39h39ab9d1_1       conda-forge     Cached
+  + pyqt5-sip                       12.17.0  py39hbe19bdc_1       conda-forge     Cached
+  + python                           3.9.23  h8a7f3fd_0_cpython   conda-forge     Cached
+  + python-dateutil             2.9.0.post0  pyhe01879c_2         conda-forge     Cached
+  + python-pptx                       1.0.2  pyh29332c3_0         conda-forge     Cached
+  + python_abi                          3.9  8_cp39               conda-forge     Cached
+  + qhull                            2020.2  h3c5361c_5           conda-forge     Cached
+  + qt-main                         5.15.15  hf9f191d_6           conda-forge     Cached
+  + readline                            8.3  h68b038d_0           conda-forge     Cached
+  + setuptools                       80.9.0  pyhff2d567_0         conda-forge     Cached
+  + sip                              6.10.0  py39hdf37715_0       conda-forge     Cached
+  + six                              1.17.0  pyhe01879c_1         conda-forge     Cached
+  + tk                               8.6.13  h7142dee_3           conda-forge     Cached
+  + toml                             0.10.2  pyhd8ed1ab_1         conda-forge     Cached
+  + tomli                             2.2.1  pyhe01879c_2         conda-forge     Cached
+  + tornado                           6.5.2  py39hb1cfd32_0       conda-forge     Cached
+  + typing-extensions                4.14.1  h4440ef1_0           conda-forge     Cached
+  + typing_extensions                4.14.1  pyhe01879c_0         conda-forge     Cached
+  + tzdata                            2025c  hc9c84f9_1           conda-forge     Cached
+  + unicodedata2                     16.0.0  py39h80efdc8_0       conda-forge     Cached
+  + wheel                            0.45.1  pyhd8ed1ab_1         conda-forge     Cached
+  + xlsxwriter                        3.2.5  pyhd8ed1ab_0         conda-forge     Cached
+  + xorg-libxau                      1.0.12  h8616949_1           conda-forge     Cached
+  + xorg-libxdmcp                     1.1.5  h8616949_1           conda-forge     Cached
+  + zipp                             3.23.0  pyhd8ed1ab_0         conda-forge     Cached
+  + zstd                              1.5.7  h3eecb57_6           conda-forge     Cached
+
+  Summary:
+
+  Install: 114 packages
+
+  Total download: 0 B
+
+──────────────────────────────────────────────────────────────────────────────────────────
+
+
+Confirm changes: [Y/n] 
+Transaction starting
+Linking ca-certificates-2026.4.22-hbd8a1cb_0
+Linking python_abi-3.9-8_cp39
+Linking tzdata-2025c-hc9c84f9_1
+Linking libcxx-22.1.4-h19cb2f5_0
+Linking bzip2-1.0.8-h500dc9f_9
+Linking libexpat-2.7.5-hcc62823_0
+Linking liblzma-5.8.3-hbb4bfdb_0
+Linking libzlib-1.3.2-hbb4bfdb_2
+Linking pthread-stubs-0.4-h00291cd_1002
+Linking xorg-libxau-1.0.12-h8616949_1
+Linking xorg-libxdmcp-1.1.5-h8616949_1
+Linking libbrotlicommon-1.2.0-h8616949_1
+Linking libiconv-1.18-h57a12c2_2
+Linking ncurses-6.6-hcc0dc9a_0
+Linking icu-75.1-h120a0e1_0
+Linking libjpeg-turbo-3.1.4.1-ha1e9b39_0
+Linking libdeflate-1.25-h517ebb2_0
+Linking libwebp-base-1.6.0-hb807250_0
+Linking libogg-1.3.5-he3325bb_1
+Linking libopus-1.6.1-hc6ced15_0
+Linking libntlm-1.8-h6e16a3a_0
+Linking llvm-openmp-22.1.4-h0d3cbff_0
+Linking libffi-3.5.2-hd1f9c09_0
+Linking openssl-3.6.2-hc881268_0
+Linking nspr-4.38-hee0b3f1_0
+Linking lerc-4.1.0-h35c7297_0
+Linking qhull-2020.2-h3c5361c_5
+Linking tk-8.6.13-h7142dee_3
+Linking pcre2-10.47-h13923f0_0
+Linking zstd-1.5.7-h3eecb57_6
+Linking libsqlite-3.53.0-h77d7759_0
+Linking libpng-1.6.58-he930e7c_0
+Linking libxcb-1.17.0-hf1f96e2_0
+Linking libbrotlienc-1.2.0-h8616949_1
+Linking libbrotlidec-1.2.0-h8616949_1
+Linking libintl-0.25.1-h3184127_1
+Linking libedit-3.1.20250104-pl5321ha958ccf_0
+Linking readline-8.3-h68b038d_0
+Linking libxml2-2.13.9-he1bc88e_0
+Linking libvorbis-1.3.7-ha059160_2
+Linking _openmp_mutex-4.5-7_kmp_llvm
+Linking libtiff-4.7.1-ha0a348c_1
+Linking nss-3.118-h2b2a826_0
+Linking libfreetype6-2.14.3-h58fbd8d_0
+Linking brotli-bin-1.2.0-h8616949_1
+Linking libintl-devel-0.25.1-h3184127_1
+Linking libglib-2.88.0-h7065de2_0
+Linking krb5-1.21.3-h37d8d59_0
+Linking python-3.9.23-h8a7f3fd_0_cpython
+Linking libllvm18-18.1.8-default_hd2a208e_9
+Linking libllvm21-21.1.0-h9b4ebcc_0
+Linking libxslt-1.1.43-h59ddae0_0
+Linking libgcc-15.2.0-h08519bb_18
+Linking openjpeg-2.5.4-h52bb76a_0
+Linking lcms2-2.19-h5ea7634_0
+Linking libfreetype-2.14.3-h694c41f_0
+Linking brotli-1.2.0-hf139dec_1
+Linking glib-tools-2.88.0-h2ddd286_0
+Linking cyrus-sasl-2.1.28-h610c526_0
+Linking libclang-cpp18.1-18.1.8-default_h9399c5b_18
+Linking libclang13-21.1.0-default_h7f9524c_1
+Linking libgfortran5-15.2.0-hd16e46c_18
+Linking freetype-2.14.3-h694c41f_0
+Linking openldap-2.6.10-hd8a590d_0
+Linking libgfortran-15.2.0-h7e5c614_18
+Linking libpq-18.1-h1e038c5_2
+Linking libopenblas-0.3.32-openmp_h9e49c7b_0
+Linking libblas-3.11.0-6_he492b99_openblas
+Linking libcblas-3.11.0-6_h9b27e0a_openblas
+Linking liblapack-3.11.0-6_h859234e_openblas
+Linking wheel-0.45.1-pyhd8ed1ab_1
+Linking setuptools-80.9.0-pyhff2d567_0
+Linking pip-25.2-pyh8b19718_0
+Linking toml-0.10.2-pyhd8ed1ab_1
+Linking zipp-3.23.0-pyhd8ed1ab_0
+Linking six-1.17.0-pyhe01879c_1
+Linking xlsxwriter-3.2.5-pyhd8ed1ab_0
+Linking typing_extensions-4.14.1-pyhe01879c_0
+Linking munkres-1.1.4-pyhd8ed1ab_1
+Linking pyparsing-3.2.3-pyhe01879c_2
+Linking cycler-0.12.1-pyhd8ed1ab_1
+Linking altgraph-0.17.4-pyhd8ed1ab_1
+Linking tomli-2.2.1-pyhe01879c_2
+Linking ply-3.11-pyhd8ed1ab_3
+Linking packaging-26.2-pyhc364b38_0
+Linking certifi-2025.8.3-pyhd8ed1ab_0
+Linking importlib_resources-6.5.2-pyhd8ed1ab_0
+Linking importlib-metadata-8.7.0-pyhe01879c_1
+Linking python-dateutil-2.9.0.post0-pyhe01879c_2
+Linking typing-extensions-4.14.1-h4440ef1_0
+Linking macholib-1.16.4-pyhd8ed1ab_0
+Linking importlib-resources-6.5.2-pyhd8ed1ab_0
+Linking pyinstaller-hooks-contrib-2025.8-pyhd8ed1ab_0
+Linking markupsafe-3.0.2-py39hd18e689_1
+Linking lxml-6.0.0-py39he07ef2a_0
+Linking unicodedata2-16.0.0-py39h80efdc8_0
+Linking tornado-6.5.2-py39hb1cfd32_0
+Linking pillow-11.3.0-py39h1fda9f2_0
+Linking numpy-2.0.2-py39h277832c_1
+Linking kiwisolver-1.4.7-py39h0d8d0ca_0
+Linking glib-2.88.0-hf35a506_0
+Linking sip-6.10.0-py39hdf37715_0
+Linking pyinstaller-6.15.0-py39hfb924e9_0
+Linking fonttools-4.59.1-py39h2753485_0
+Linking contourpy-1.3.0-py39h0d3c867_2
+Linking gstreamer-1.24.11-h7d1b200_0
+Linking pyqt5-sip-12.17.0-py39hbe19bdc_1
+Linking matplotlib-base-3.9.4-py39hda06d36_0
+Linking gst-plugins-base-1.24.11-h09840cc_0
+Linking matplotlib-3.9.4-py39h6e9494a_0
+Linking qt-main-5.15.15-hf9f191d_6
+Linking pyqt-5.15.11-py39h39ab9d1_1
+Linking jinja2-3.1.6-pyhd8ed1ab_0
+Linking python-pptx-1.0.2-pyh29332c3_0
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    mamba activate polo0.2.1-py39
+
+Or to execute a single command in this environment, use:
+
+    mamba run -n polo0.2.1-py39 mycommand
+
+
+Installing pip packages: molmass, tensorflow
