@@ -2,12 +2,13 @@
 # Set up .condarc:
 # conda config --add channels conda-forge
 # conda config --set channel_priority strict
-name: polo0.2.1
+name: polo-py39-0.2.1
 channels:
   - conda-forge
   - defaults
+platform: osx-64
 dependencies:
-  - python=3.12
+  - python=3.9
   - pyinstaller
   - ca-certificates
   - certifi
