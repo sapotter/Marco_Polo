@@ -9,7 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/wheels" />
       <excludeFolder url="file://$MODULE_DIR$/src/.tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="/usr/local/Caskroom/miniforge/base/envs/polo0.2.1" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="polo-py39-0.2.1" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
