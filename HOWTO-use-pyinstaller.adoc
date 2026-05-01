@@ -50,7 +50,7 @@ Now run `pyinstaller.py` to build the executable:
 
 [source,bash]
 ----
-platform=x64; pyinstaller --clean -y macOS/Polo.spec 2>&1 | tee pyinstall-"${platform}"-output.txt
+platform=$(uname -m); pyinstaller --clean -y macOS/Polo.spec 2>&1 | tee pyinstall-"${platform}"-output.txt; unset platform
 ----
 
 >**NOTE:** Use platform=x64|arm64
