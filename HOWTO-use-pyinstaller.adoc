@@ -50,8 +50,10 @@ Now run `pyinstaller.py` to build the executable:
 
 [source,bash]
 ----
-pyinstaller --clean -y macOS/Polo.spec
+platform=x64; pyinstaller --clean -y macOS/Polo.spec 2>&1 | tee pyinstall-"${platform}"-output.txt
 ----
+
+>**NOTE:** Use platform=x64|arm64
 
 The application bundle, `Polo.app`, is in directory `dist`:
 
