@@ -100,9 +100,6 @@ __pycache__/
 build/
 develop-eggs/
 dist/
-dist-x86_64/
-dist-x86_64-cpu/
-dist-arm64/
 downloads/
 eggs/
 .eggs/
@@ -297,6 +294,11 @@ sphnix/_build/
 !/macOS/*.spec
 !/Windows/*.spec
 !/test/*.spec
+
+# No extra dists
+dist-x86_64/
+dist-x86_64-cpu/
+dist-arm64/
 
 # No DMGs
 *.dmg
