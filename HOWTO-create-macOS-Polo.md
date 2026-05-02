@@ -6,7 +6,7 @@
 mamba env create -f macOS/environment-$(uname -m).yml 2>&1 | tee env-$(uname -m)-output.txt
 ```
 
-## Define `tag` before running `pyinstaller` and `create-dmg`
+## Option: define `tag` before running `pyinstaller` and `create-dmg`
 tag=""
 
 ## Run `pyinstaller` to create executable
